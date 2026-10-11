@@ -10,7 +10,7 @@ Ncal là công cụ giải hệ phương trình phi tuyến kỹ thuật mã ngu
 
 ### 1.1. Sử dụng Bản phát hành Đóng gói sẵn (Windows Standalone)
 Không cần cài đặt Python hay bất kỳ thư viện phụ thuộc nào:
-1. Tải gói nén chính thức **[Ncal-windows.zip](Ncal-windows.zip)** (~110.96 MB).
+1. Tải gói nén chính thức **[Ncal-windows.zip]([Ncal-windows.zip](https://github.com/nbchien/ncal/releases/tag/v5.0-beta.3))** (~110.96 MB).
 2. Giải nén và nhấp đúp vào **`Ncal.exe`** để khởi chạy ngay lập tức.
 3. **Giao diện & Taskbar Icon**: Ứng dụng đã được đăng ký mã định danh Windows `AppUserModelID` (`smartair.ncal.equation_solver.5.0.3`) và nhúng bộ icon đa độ phân giải (16x16 đến 256x256 px), đảm bảo biểu tượng Ncal luôn hiển thị sắc nét và đồng bộ trên Windows Taskbar, cửa sổ chuyển đổi ứng dụng Alt+Tab và thanh tiêu đề cửa sổ.
 
