@@ -3,8 +3,6 @@
 <img width="1024" height="611" alt="68dc7f38-1206-4eeb-bec5-fcd52d310613" src="https://github.com/user-attachments/assets/765d8e70-0bd3-4f75-8c72-99300a59332a" />
 
 Ncal là công cụ giải hệ phương trình phi tuyến kỹ thuật mã nguồn mở với tính năng và cú pháp tương tự Engineering Equation Solver (EES). Ncal hỗ trợ tính toán đơn vị tự động (Pint), cấu hình hệ đơn vị linh hoạt (°C/K, bar/kPa/Pa, kJ/J), tích hợp thuộc tính nhiệt động lực học môi chất chất lưu (CoolProp) với cú pháp hàm EES trực quan, bộ 16 ví dụ mẫu chuẩn hóa công nghiệp và 4 dự án chu trình kỹ thuật mẫu, công cụ chèn hàm & danh mục môi chất lạnh, cấu trúc điều khiển (FOR/WHILE/IF/CASE), kiểm tra đơn vị nhất quán, đồ thị tổng quát, phân tích nhạy cảm, tìm nhiều nghiệm và cửa sổ sơ đồ kỹ thuật trực quan (Diagram Window).
-<img width="1024" height="612" alt="ba68c99a-ab4b-4a35-b070-e237244218dc" src="https://github.com/user-attachments/assets/00bf24f5-bb83-474c-855b-72a49b787fae" />
-<img width="1024" height="612" alt="a19a89ed-f468-43a3-9d7b-7f65616209cc" src="https://github.com/user-attachments/assets/e8d0ac47-54f4-4292-9abf-0c73ebd7f53e" />
 
 ---
 
