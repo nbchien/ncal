@@ -1,21 +1,75 @@
-MIT License
+GIẤY PHÉP NGƯỜI DÙNG CUỐI (EULA) - PHẦN MỀM MIỄN PHÍ KHÔNG CÔNG BỐ MÃ NGUỒN
+--------------------------------------------------------------------------------
+Bản quyền © 2026 Nguyễn Bá Chiến. Toàn bộ quyền được bảo lưu.
 
-Copyright (c) 2026 Chien Nguyen
+BẰNG VIỆC TẢI XUỐNG, CÀI ĐẶT HOẶC SỬ DỤNG PHẦN MỀM NÀY, BẠN ĐÃ CHẤP THUẬN CÁC ĐIỀU KHOẢN DƯỚI ĐÂY. NẾU BẠN KHÔNG ĐỒNG Ý, VUI LÒNG KHÔNG CÀI ĐẶT VÀ XÓA BỎ PHẦN MỀM KHỎI THIẾT BỊ.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. CẤP PHÉP SỬ DỤNG (GRANT OF LICENSE)
+Tác giả cấp cho bạn quyền không độc quyền, không thể chuyển nhượng để cài đặt và sử dụng phần mềm này hoàn toàn miễn phí cho mục đích cá nhân, giáo dục, hoặc sử dụng nội bộ tại các nhà máy, doanh nghiệp (bao gồm cả việc tính toán phục vụ vận hành sản xuất). 
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Tuy nhiên, giấy phép này **nghiêm cấm** mọi hành vi:
+*   Mua bán, cho thuê, thương mại hóa hoặc thu phí bản quyền đối với phần mềm này.
+*   Tích hợp phần mềm này vào một sản phẩm hoặc dịch vụ thương mại khác để bán ra thị trường khi chưa có sự đồng ý bằng văn bản của Tác giả.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. QUYỀN SỞ HỮU TRÍ TUỆ VÀ MÃ NGUỒN (PROPRIETARY RIGHTS & SOURCE CODE)
+Tất cả quyền sở hữu trí tuệ, bản quyền đối với phần mềm này thuộc về Nguyễn Bá Chiến. Mã nguồn của phần mềm là độc quyền và KHÔNG được công bố hay công khai dưới bất kỳ hình thức nào.
+
+3. CÁC HÀN CHẾ (RESTRICTIONS)
+Bạn KHÔNG ĐƯỢC PHÉP:
+* Dịch ngược (Reverse Engineer), rã mã (Decompile), tháo rời (Disassemble) hoặc cố gắng tìm cách khai thác mã nguồn của phần mềm từ file binary.
+* Sửa đổi, biên tập lại, hoặc tạo ra các sản phẩm phái sinh dựa trên phần mềm này.
+* Bán, cho thuê, cho mượn, phát hành lại thương mại hoặc sử dụng phần mềm để trực tiếp thu phí từ người khác mà không có sự đồng ý bằng văn bản của tác giả.
+
+4. PHÂN PHỐI (DISTRIBUTION)
+Bạn được quyền chia sẻ và phân phối file cài đặt (binary) gốc của phần mềm này cho người khác với điều kiện giữ nguyên vẹn file, không thay đổi nội dung và không thu phí. Việc phân phối phải đi kèm với tệp văn bản Giấy phép này.
+
+5. TỪ CHỐI BẢO HÀNH VÀ TRÁCH NHIỆM (DISCLAIMER OF WARRANTY)
+Phần mềm này được cung cấp theo nguyên tắc "NHƯ HIỆN TẠI" (As-Is), không có bất kỳ sự bảo đảm nào về hiệu năng, độ ổn định hay tính phù hợp cho một mục đích cụ thể. Tác giả sẽ không chịu trách nhiệm cho bất kỳ thiệt hại trực tiếp, gián tiếp, ngẫu nhiên hoặc hệ quả nào (bao gồm mất mát dữ liệu, gián đoạn kinh doanh) phát sinh từ việc sử dụng hoặc không thể sử dụng phần mềm.
+
+6. THÔNG BÁO VỀ THÀNH PHẦN CỦA BÊN THỨ BA
+Phần mềm này có sử dụng các thư viện mã nguồn mở sau:
+* PySide (Giấy phép LGPLv3) - Bản quyền thuộc về (C) The Qt Company.
+* CoolProp (Giấy phép MIT) - Bản quyền thuộc về (C) Ian H. Bell và các nhà phát triển CoolProp.
+* SciPy (Giấy phép BSD 3-Clause) - Bản quyền thuộc về (C) Các nhà phát triển SciPy.
+* Pint (Giấy phép BSD 3-Clause) - Bản quyền thuộc về (C) Hernan E. Grecco.
+
+Các văn bản giấy phép gốc và thông báo bản quyền của những thư viện này được đính kèm trong thư mục 'licenses' đi cùng với phần mềm này.
+
+--------------------------------------------------------------------------------
+
+END USER LICENSE AGREEMENT (EULA) - FREEWARE CLOSED-SOURCE
+--------------------------------------------------------------------------------
+Copyright © 2026 Nguyen Ba Chien. All rights reserved.
+
+BY DOWNLOADING, INSTALLING, OR USING THIS SOFTWARE, YOU AGREE TO BE BOUND BY THE FOLLOWING TERMS. IF YOU DO NOT AGREE, DO NOT INSTALL AND DELETE THE SOFTWARE.
+
+1. GRANT OF LICENSE
+The Author grants you a non-exclusive, non-transferable license to install and use this software free of charge for personal, educational, or internal business operations (including calculations for factories and corporate use).
+
+However, this license **strictly prohibits**:
+*   Selling, renting, leasing, or charging any fees for this software.
+*   Bundling or integrating this software into other commercial products or services for sale without prior written consent from the Author.
+
+2. INTELLECTUAL PROPERTY & CLOSED-SOURCE
+All intellectual property rights and copyrights in and to this software belong exclusively to Nguyen Ba Chien. The source code of this software is proprietary and is NOT made public or available under any circumstances.
+
+3. RESTRICTIONS
+You SHALL NOT, and shall not permit others to:
+* Reverse engineer, decompile, disassemble, or attempt to derive the source code of the software from the binary.
+* Modify, adapt, tamper with, or create derivative works based upon the software.
+* Sell, rent, lease, sub-license, or commercially exploit the software for monetary gain without prior written consent.
+
+4. DISTRIBUTION
+You are allowed to redistribute the original, unmodified binary package of this software freely, provided that you do not charge any fees for it and this LICENSE file is included intact.
+
+5. DISCLAIMER OF WARRANTY & LIMITATION OF LIABILITY
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. THE AUTHOR SHALL NOT BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, OR LOSS OF INFORMATION) ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE.
+
+6. THIRD-PARTY COMPONENT NOTICES
+This software uses the following open-source libraries:
+* PySide (LGPLv3 License) - Copyright (C) The Qt Company.
+* CoolProp (MIT License) - Copyright (C) Ian H. Bell and CoolProp developers.
+* SciPy (BSD 3-Clause License) - Copyright (C) SciPy developers.
+* Pint (BSD 3-Clause License) - Copyright (C) Hernan E. Grecco.
+
+The original licenses and copyright notices for these libraries are included in the 'licenses' folder distributed with this software.
