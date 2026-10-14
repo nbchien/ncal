@@ -1,24 +1,24 @@
-# Ncal — Bộ giải hệ phương trình kỹ thuật (Beta 5.0.3)
+# Ncal — Bộ giải hệ phương trình kỹ thuật (Beta 5.0.3 update 1)
 
-<img width="1024" height="611" alt="68dc7f38-1206-4eeb-bec5-fcd52d310613" src="https://github.com/user-attachments/assets/765d8e70-0bd3-4f75-8c72-99300a59332a" />
+<img width="2877" height="1718" alt="image" src="https://github.com/user-attachments/assets/76efaa0f-4aa2-4136-a576-317308318bb0" />
 
-Ncal là công cụ giải hệ phương trình phi tuyến kỹ thuật mã nguồn mở với tính năng và cú pháp tương tự Engineering Equation Solver (EES). Ncal hỗ trợ tính toán đơn vị tự động (Pint), cấu hình hệ đơn vị linh hoạt (°C/K, bar/kPa/Pa, kJ/J), tích hợp thuộc tính nhiệt động lực học môi chất chất lưu (CoolProp) với cú pháp hàm EES trực quan, bộ 16 ví dụ mẫu chuẩn hóa công nghiệp và 4 dự án chu trình kỹ thuật mẫu, công cụ chèn hàm & danh mục môi chất lạnh, cấu trúc điều khiển (FOR/WHILE/IF/CASE), kiểm tra đơn vị nhất quán, đồ thị tổng quát, phân tích nhạy cảm, tìm nhiều nghiệm và cửa sổ sơ đồ kỹ thuật trực quan (Diagram Window).
+Ncal là công cụ giải hệ phương trình phi tuyến kỹ thuật mã nguồn mở với tính năng và cú pháp tương tự Engineering Equation Solver (EES). Ncal hỗ trợ tính toán đơn vị tự động (Pint), cấu hình hệ đơn vị linh hoạt (°C/K, bar/kPa/Pa, kJ/J), tích hợp thuộc tính nhiệt động lực học môi chất chất lưu (CoolProp) với cú pháp hàm trực quan, bộ 16 ví dụ mẫu chuẩn hóa công nghiệp và 4 dự án chu trình kỹ thuật mẫu, công cụ chèn hàm & danh mục môi chất lạnh, cấu trúc điều khiển (FOR/WHILE/IF/CASE), kiểm tra đơn vị nhất quán, đồ thị tổng quát, phân tích nhạy cảm, tìm nhiều nghiệm và cửa sổ sơ đồ kỹ thuật trực quan (Diagram Window).
 
 ---
 
 ## 1. Cài đặt và Khởi chạy
 
 ### Sử dụng Bản phát hành Đóng gói sẵn (Windows Standalone)
-1. Tải gói nén chính thức **[Ncal-windows.zip](https://github.com/nbchien/ncal/releases/download/v5.0-beta.3/Ncal-windows.zip)** (~110.96 MB).
+1. Tải gói nén chính thức **[Ncal-windows.zip](https://github.com/nbchien/ncal/releases/download/v5.0-beta.3.1/Ncal-windows_v50_beta3.1.zip)** (~111MB). Phiên bản mới nhất là phiên bản v5.0.3 update 1.
 2. Giải nén và nhấp đúp vào **`Ncal.exe`** để khởi chạy ngay lập tức.
-3. **Giao diện & Taskbar Icon**: Ứng dụng đã được đăng ký mã định danh Windows `AppUserModelID` (`smartair.ncal.equation_solver.5.0.3`) và nhúng bộ icon đa độ phân giải (16x16 đến 256x256 px), đảm bảo biểu tượng Ncal luôn hiển thị sắc nét và đồng bộ trên Windows Taskbar, cửa sổ chuyển đổi ứng dụng Alt+Tab và thanh tiêu đề cửa sổ.
+3. **Giao diện & Taskbar Icon**: Ứng dụng đã được đăng ký mã định danh Windows `AppUserModelID` (`smartair.ncal.equation_solver.5.0.3`).
 4. Tải thư viện example để xem các ví dụ mẫu.
 
 #### Mã băm xác thực toàn vẹn (Checksums SHA-256):
 - **Tệp nén `Ncal-windows.zip`**:
-  `0edcc9d2aab4112fe27556cd63c36352384566b682a1477add4f117725b28a6b`
+  `bd1bddac2c827ff59a673fde60a3cf71bb2b85ddbfe8d2d11c80d663e4d4b3b2`
 - **Tệp thực thi `Ncal.exe`**:
-  `411d0ed62bc4dbe0e11464f1580c30e223b902aaebcd669fc2aa05312d2826fe`
+  `fb83bf3fa559a0a231beb445dcbb9feafe0686e6700acc21a19f28a1c902c49d`
 
 ---
 
@@ -169,14 +169,110 @@ Biến chuỗi được tự động thay thế bằng giá trị thực tế tr
 - Hệ thống tự động nhận diện và không coi tên biến chuỗi là ẩn số cần giải trong hệ phương trình.
 
 ### 2.9. Hằng số và Hàm chuyển đổi đơn vị
-- Hằng số định nghĩa sẵn:
+#### 2.9.1. Hằng số định nghĩa sẵn:
   - `g = 9.80665 m/s^2` (gia tốc trọng trường)
   - `R = 8.314462618 J/(mol*K)` (hằng số khí lý tưởng)
   - `T0 = 273.15 K`, `P0 = 101325 Pa`
   - `pi`, `e`
 - Hàm chuyển đổi đơn vị trong phương trình:
   - `to(P, 'bar')`
+ 
+#### 2.9.2. Hàm chuyển đổi đơn vị tổng quát:
+Cú pháp:
+```ees
+factor = convert('đơn_vị_gốc', 'đơn_vị_đích')
+// hoặc viết hoa CONVERT('from_unit', 'to_unit')
+```
+Hàm trả về hệ số nhân chuyển đổi giữa hai đơn vị cùng thứ nguyên. Hỗ trợ đầy đủ các hệ đơn vị kỹ thuật (SI, US Customary / Imperial):
+- **Áp suất (Pressure)**: `Pa`, `kPa`, `MPa`, `bar`, `psi`, `atm`, `torr`, `mmHg`, `mbar`...
+  - `P_Pa = P_bar * convert('bar', 'Pa')`  << 1 bar = 100,000 Pa >>
+  - `P_psi = P_bar * convert('bar', 'psi')`  << 1 bar = 14.5038 psi >>
+  - `P_bar = P_kPa * convert('kPa', 'bar')`  << 100 kPa = 1 bar >>
+- **Công suất & Năng suất lạnh (Power & Cooling Capacity)**: `W`, `kW`, `MW`, `hp` (mã lực), `ton` hoặc `TR`/`RT` (ton lạnh), `Btu/h`...
+  - `Q_ton = Q_kW * convert('kW', 'ton')`  << 1 ton lạnh = 3.51685 kW >>
+  - `W_hp = W_kW * convert('kW', 'hp')`  << 1 hp = 0.7457 kW >>
+  - `Q_btuh = Q_kW * convert('kW', 'Btu/h')`
+- **Lưu lượng thể tích (Volumetric Flow Rate)**: `m^3/s`, `m^3/h`, `L/s`, `L/min`, `cfm` (ft³/min)...
+  - `V_cfm = V_dot * convert('m^3/s', 'cfm')`  << 1 m³/s = 2118.88 cfm >>
+  - `V_m3h = V_dot * convert('m^3/s', 'm^3/h')`  << 1 m³/s = 3600 m³/h >>
+- **Năng lượng & Nhiệt lượng (Energy & Heat)**: `J`, `kJ`, `MJ`, `kWh`, `cal`, `kcal`, `Btu`...
+  - `E_kWh = E_kJ * convert('kJ', 'kWh')`
+- **Khối lượng & Chiều dài (Mass & Length)**: `kg`, `g`, `lb`, `ton`, `m`, `mm`, `cm`, `inch`, `ft`...
+  - `m_lb = m_kg * convert('kg', 'lb')`
+  - `L_in = L_m * convert('m', 'inch')`
 
+#### 2.9.3. Hàm chuyển đổi thang nhiệt độ:
+Cú pháp:
+```ees
+T_out = convert_temp('thang_gốc', 'thang_đích', giá_trị)
+// hoặc viết hoa CONVERT_TEMP('from_scale', 'to_scale', val)
+```
+Các thang đo hỗ trợ: `'C'` (Celsius), `'K'` (Kelvin), `'F'` (Fahrenheit), `'R'` (Rankine).
+- Đổi từ °C sang Kelvin:
+  `T_K = convert_temp('C', 'K', T_C)` (ví dụ: `convert_temp('C', 'K', 40) = 313.15 K`)
+- Đổi từ Kelvin sang °C:
+  `T_C = convert_temp('K', 'C', T_K)` (ví dụ: `convert_temp('K', 'C', 300) = 26.85 °C`)
+- Đổi từ °C sang Fahrenheit:
+  `T_F = convert_temp('C', 'F', 25)`  << Trả về 77 °F >>
+- Đổi từ Fahrenheit sang Rankine:
+  `T_R = convert_temp('F', 'R', 77)`  << Trả về 536.67 °R >>
+
+### 2.10. Thư viện 101 Hàm Toán học & Hằng số Kỹ thuật
+Ncal tích hợp bộ thư viện 101 hàm toán học và hằng số kỹ thuật toàn diện. Các hàm tự động tương thích với thứ nguyên (bảo toàn đơn vị hoặc tự quy đổi góc), được phân thành 10 nhóm chính:
+
+1. **Lượng giác thuận**: `sin`, `cos`, `tan`, `cot`, `sec`, `csc`.
+   - Tuân thủ chế độ góc hệ thống (`UnitsSystem.angle`: degree hoặc radian) và tự nhận diện đơn vị Pint (ví dụ `sin(30[deg])` hoặc `sin(pi/6[rad])`).
+   - Cung cấp hàm tường minh độ: `sind`, `cosd`, `tand`, `cotd`, `secd`, `cscd` (luôn dùng độ).
+   - Cung cấp hàm tường minh radian: `sinr`, `cosr`, `tanr`, `cotr`, `secr`, `cscr` (luôn dùng radian).
+2. **Lượng giác ngược**: `asin`, `acos`, `atan`, `atan2`, `acot`, `asec`, `acsc`.
+   - Kết quả trả về tự động theo chế độ góc đang cấu hình.
+   - Cung cấp hàm tường minh độ: `asind`, `acosd`, `atand`, `atan2d`, `acotd`, `asecd`, `acscd` (luôn trả về độ).
+   - Cung cấp hàm tường minh radian: `asinr`, `acosr`, `atanr`, `atan2r`, `acotr`, `asecr`, `acscr` (luôn trả về radian).
+3. **Hyperbolic & Hyperbolic ngược**:
+   - `sinh`, `cosh`, `tanh`, `coth`, `sech`, `csch`.
+   - `asinh`, `acosh`, `atanh`, `acoth`, `asech`, `acsch`.
+4. **Mũ & Logarit**:
+   - `exp(x)` ($e^x$), `expm1(x)` ($e^x - 1$).
+   - `ln(x)` (logarit tự nhiên cơ số $e$).
+   - `log(x)` (chuẩn EES: mặc định cơ số 10) hoặc `log(x, base)` khi chỉ định cơ số.
+   - `log10(x)`, `log2(x)`, `log1p(x)`.
+5. **Lũy thừa, Căn thức & Khoảng cách**:
+   - `sqrt(x)`: Bảo toàn đơn vị Pint (ví dụ: `sqrt(16[m^2]) = 4[m]`).
+   - `cbrt(x)`: Căn bậc ba số thực engineering, hỗ trợ chính xác cả số âm thực ($\sqrt[3]{-27} = -3$) và bảo toàn đơn vị Pint (`cbrt(-8[m^3]) = -2[m]`).
+   - `root(x, n)` / `nthroot`: Căn bậc $n$ của $x$.
+   - `hypot(x, y, ...)`: Khoảng cách Euclidean $\sqrt{x^2 + y^2}$, hỗ trợ bảo toàn đơn vị Pint.
+   - `sqr(x)` / `square`: Bình phương $x^2$ (hàm SQR chuẩn EES).
+   - `quadsum(x, y, ...)`: Tổng bình phương các phần tử.
+6. **Làm tròn, Dấu & Số học nguyên**:
+   - `abs(x)` / `safe_abs`: Giá trị tuyệt đối, bảo toàn đơn vị Pint (ví dụ: `abs(-5[kW]) = 5[kW]`).
+   - `sign(x)` / `sgn`: Hàm dấu (trả về 1, -1 hoặc 0).
+   - `round(x, n)` / `safe_round`: Làm tròn đến $n$ chữ số, bảo toàn đơn vị Pint.
+   - `floor(x)`, `ceil(x)`, `trunc(x)`, `frac(x)` (phần phân số $x - \text{trunc}(x)$).
+   - `mod(x, y)`, `rem(x, y)`, `gcd(a, b)`, `lcm(a, b)`.
+7. **Bước nhảy & Kỹ thuật điều khiển**:
+   - `step(x)`: Hàm bước Heaviside ($1$ nếu $x \ge 0$, ngược lại $0$).
+   - `ramp(x)`: Hàm dốc ($\max(0, x)$).
+   - `clamp(x, lo, hi)` / `clip`: Giới hạn $x$ trong đoạn $[\text{lo}, \text{hi}]$, bảo toàn đơn vị Pint.
+   - `smooth_step(x, edge0, edge1)`: Hàm bước chuyển tiếp mượt mà bậc 3 (Hermite cubic).
+   - `if_then(cond, true_val, false_val)` / `ifelse`: Hàm điều kiện nội tuyến 3 tham số.
+8. **Giải tích đặc biệt & Tổ hợp**:
+   - `factorial(n)` / `fact`: Giai thừa $n!$.
+   - `gamma(x)`, `lgamma(x)`: Hàm Gamma và Log-gamma.
+   - `erf(x)`, `erfc(x)`: Hàm sai số Gauss và sai số bù.
+   - `comb(n, k)`, `perm(n, k)`: Tổ hợp và chỉnh hợp.
+   - `bessel_j0(x)`, `bessel_j1(x)`, `bessel_y0(x)`, `bessel_y1(x)`: Hàm Bessel loại 1 và loại 2 cấp 0 & 1.
+9. **Thống kê & Mảng số liệu**:
+   - `sum(...)`, `min(...)`, `max(...)`, `avg(...)` / `mean`, `size(...)`.
+   - `std(...)` / `stdev`: Độ lệch chuẩn mẫu.
+   - `var(...)` / `variance`: Phương sai mẫu.
+   - `median(...)`: Giá trị trung vị.
+   - `polyval(coeffs, x)`: Tính giá trị đa thức $c_0 x^n + \dots + c_n$ tại $x$.
+   - `interp(x, x_pts, y_pts)`: Nội suy tuyến tính 1D giá trị $y$ tại $x$.
+10. **Đổi góc & Hằng số vật lý**:
+    - `degrees(rad)` / `deg`, `radians(deg)` / `rad`.
+    - `pi` ($3.14159265\dots$), `e` ($2.7182818\dots$).
+    - `g` ($9.80665\text{ m/s}^2$), `R` ($8.3144626\text{ J/(mol}\cdot\text{K)}$).
+    - `T0` ($273.15\text{ K}$), `P0` ($101325.0\text{ Pa}$).
 ---
 
 ## 3. Các tính năng chính
@@ -267,21 +363,33 @@ Biến chuỗi được tự động thay thế bằng giá trị thực tế tr
 - Chuyển đổi và mở rộng thật các khối `FOR / WHILE / CASE / IF-ELSE`.
 - Nhận biết chỉ thị hệ đơn vị: `$UNITSYSTEM SI` hoặc cảnh báo với `$UNITSYSTEM US`.
 
-### 3.6. Đồ thị chung và Biểu đồ logP-h (GraphDialog)
-- **Biểu đồ logP-h (Phím tắt Ctrl+Shift+P)**:
+### 3.6. Đồ thị kỹ thuật (GraphDialog: logP-h, T-s, y=f(x))
+- **Hộp thoại Đồ thị (Phím tắt Ctrl+Shift+P / Toolbar "Đồ thị")**:
+  - Hỗ trợ 3 tab đồ thị chuyên dụng: **logP-h**, **T-s**, và **Đồ thị chung $y = f(x)$**.
+  - Tiêu đề cửa sổ popup và thanh Taskbar hiển thị ngắn gọn, nhất quán: **"Đồ thị"** (tiếng Anh: **"Plot"**).
+- **Biểu đồ logP-h**:
   - Tự động nhận diện môi chất nhiệt động lực học đang sử dụng trong bài toán (ví dụ: `Ammonia`, `R134a`, `Water`...).
   - Tự động thu thập các điểm mảng `P` và `h` (kể cả khi ở dạng tham số hoặc biến) để vẽ lên biểu đồ.
   - Tự động vẽ đường bão hòa lỏng / hơi (CoolProp) cho môi chất tương ứng.
+  - Tùy chọn đơn vị áp suất: **Mặc định hiển thị theo `bar`** (tùy chọn chuyển đổi sang `Pa`), enthalpy theo kJ/kg hoặc J/kg, đồng bộ chuẩn xác với cột `P (bar)` trong bảng thông số điểm chu trình.
   - Tùy chọn nối chu trình khép kín ($1 \to 2 \to 3 \to 4 \to 1$) và hiển thị nhãn số thứ tự điểm trạng thái.
+  - **Tính năng vẽ chu trình theo thứ tự tùy chọn (Custom connection path)**: Cho phép kết nối các điểm trạng thái theo thứ tự bất kỳ, hỗ trợ nhiều đường/nhánh (multiline). Mỗi dòng định nghĩa một chuỗi điểm cách nhau bằng dấu phẩy, kèm tùy chọn màu sắc và kiểu nét linh hoạt qua dấu `:` (ví dụ: `1,2,3,5:blue:line`, `3,5,6,1:red:dash`, hoặc tiếng Việt `1,2,3,5:xanh nước biển:nét liền`, `3,5,6,1:nét đứt:đỏ`, mã hex `#00aa55:dot`).
   - Tích hợp bảng tóm tắt thông số các điểm chu trình (P, h, T, s) ngay trong giao diện đồ thị.
   - Xuất đồ thị sang file ảnh vector **SVG** hoặc file **PNG** chất lượng cao (300 DPI).
+- **Biểu đồ T-s (Temperature - Entropy)**:
+  - Tự động nhận diện biến mảng nhiệt độ `T` và entropy `s`.
+  - Tùy chọn hiển thị nhiệt độ theo °C hoặc K, entropy theo kJ/(kg·K) hoặc J/(kg·K).
+  - Tự động vẽ đường cong bão hòa lỏng/hơi (Saturation dome) cho môi chất trên hệ tọa độ T-s.
+  - Tương tự biểu đồ logP-h, hỗ trợ nối chu trình mặc định hoặc vẽ theo thứ tự tùy chọn bất kỳ với màu sắc và kiểu nét tùy biến.
+  - Tự động đồng bộ hóa thông minh tên môi chất và nội dung chuỗi nối điểm hai chiều giữa Tab logP-h và Tab T-s.
+  - Tích hợp bảng tóm tắt thông số các điểm trạng thái (Point, T, s, P, h).
 - **Đồ thị tổng quát $y = f(x)$**:
   - Tùy chọn biểu thức trục $x$, $y$.
   - Trục tỷ lệ Logarithmic hoặc Linear.
   - Hiển thị lưới (Grid), Chú giải (Legend), Nhãn điểm (Data labels).
 
 ### 3.7. Phân tích độ nhạy (Sensitivity Analysis)
-- Menu: **Công cụ > Phân tích nhạy cảm...**
+- Menu: **Công cụ > Phân tích độ nhạy...**
 - Chọn tham số cần quét (sweep parameter), dải giá trị (Start .. Stop), số bước quét (Linear hoặc Log).
 - Chọn các biến mục tiêu để khảo sát.
 - Bảng kết quả định dạng cột tự động được xuất vào tab **Kết quả**.
@@ -304,7 +412,7 @@ Biến chuỗi được tự động thay thế bằng giá trị thực tế tr
   - Tương thích ngược 100% với các file format version 1 cũ.
 
 ### 3.10. Cửa sổ Sơ đồ hệ thống (System Diagram Window)
-Cửa sổ sơ đồ kỹ thuật trực quan tương tự Diagram Window của EES:
+Cửa sổ sơ đồ kỹ thuật trực quan:
 - **Tích hợp Dock linh hoạt**: Có thể gắn cạnh ô soạn thảo hoặc kéo ra màn hình phụ thứ hai.
 - **Hai chế độ hoạt động**: Chế độ **Chạy (Run Mode)** khóa layout và mở tương tác tham số; chế độ **Thiết kế (Design Mode)** mở bảng thuộc tính và thư viện ký hiệu kéo-thả.
 - **Thư viện ký hiệu kỹ thuật vector SVG**: 70 thiết bị chuẩn gồm Máy nén (compressor), Dàn ngưng (condenser), Dàn bay hơi (evaporator), Van tiết lưu (expansion valve), Bơm (pump), Tuabin (turbine), Bộ trao đổi nhiệt 4 cổng (heat exchanger), Nồi hơi (boiler), Bình chứa/tách lỏng (tank), Quạt (fan), Nút giao (junction), Nguồn/đích dòng (source/sink), Mũi tên nhiệt và công ($Q, W$).
@@ -317,11 +425,10 @@ Cửa sổ sơ đồ kỹ thuật trực quan tương tự Diagram Window của 
   - Cơ chế nhận diện trạng thái cũ (*stale*) khi sửa code và đánh dấu cảnh báo nếu biến chưa tồn tại.
 - **Tương thích giao diện & Đa nền tảng**: Tự động chuyển đổi màu theo Theme sáng/tối, hỗ trợ song ngữ Việt / Anh.
 - **Xuất sơ đồ đa định dạng**: Xuất trực tiếp sang ảnh raster **PNG** (2x, hỗ trợ nền trong suốt), vector **SVG** độ nét vô hạn, và tài liệu in ấn **PDF**.
-- **Cải tiến sơ đồ phiên bản Beta 5.0.3**:
-  - **Chọn khung chữ nhật (RubberBandDrag - C1)**: Kéo chuột trên vùng trống của sơ đồ ở chế độ Thiết kế để chọn đồng thời nhiều thiết bị, nhãn và đường ống; tương thích mượt mà với Space-pan.
-  - **Đặt lại đường ống tự động (Reset Waypoints - C3)**: 1-click chuột phải hoặc bấm nút trên bảng thuộc tính để đưa đường ống uốn lượn về định tuyến trực giao tự động chuẩn, hỗ trợ đầy đủ Hoàn tác (`Ctrl+Z`) và Làm lại (`Ctrl+Y`).
-  - **Phím tắt độc lập (A2)**: Các phím tắt xoay (`R`), lật (`H`/`V`), nhân bản (`Ctrl+D`), xóa (`Delete`) hoạt động tin cậy và không xung đột khi nhập liệu ô tham số.
-  - **Cập nhật tham số im lặng (A4)**: Kéo thanh trượt tham số giải lại êm ái dưới nền, không bật modal thông báo gây gián đoạn trải nghiệm người dùng.
+- **Chọn khung chữ nhật (RubberBandDrag - C1)**: Kéo chuột trên vùng trống của sơ đồ ở chế độ Thiết kế để chọn đồng thời nhiều thiết bị, nhãn và đường ống; tương thích mượt mà với Space-pan.
+- **Đặt lại đường ống tự động (Reset Waypoints - C3)**: 1-click chuột phải hoặc bấm nút trên bảng thuộc tính để đưa đường ống uốn lượn về định tuyến trực giao tự động chuẩn, hỗ trợ đầy đủ Hoàn tác (`Ctrl+Z`) và Làm lại (`Ctrl+Y`).
+- **Phím tắt độc lập (A2)**: Các phím tắt xoay (`R`), lật (`H`/`V`), nhân bản (`Ctrl+D`), xóa (`Delete`) hoạt động tin cậy và không xung đột khi nhập liệu ô tham số.
+- **Cập nhật tham số im lặng (A4)**: Kéo thanh trượt tham số giải lại êm ái dưới nền, không bật modal thông báo gây gián đoạn trải nghiệm người dùng.
 - **Hướng dẫn chi tiết**: Xem thêm tài liệu với các ví dụ chu trình hoàn chỉnh (`refrigeration_cycle.nc`, `rankine_cycle.nc`, `brayton_cycle.nc`).
 
 ### 3.11. Bộ 16 Ví dụ Mẫu Nhiệt Động Lực Học Tiêu Chuẩn & 4 Dự Án Chu Trình Mẫu (Standard Examples Suite)
@@ -367,4 +474,4 @@ Mọi biểu thức toán học và hàm người dùng được thực thi tron
 ---
 
 ## 5. Giấy phép
-MIT
+Bản quyền © 2026 Nguyễn Bá Chiến. Phát hành miễn phí theo Giấy phép Người dùng Cuối (EULA - Freeware) phục vụ cá nhân, giáo dục, nghiên cứu và sản xuất nội bộ doanh nghiệp. Chi tiết xem tại [LICENSE.txt](LICENSE.txt).
