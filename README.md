@@ -9,16 +9,16 @@ Ncal là công cụ giải hệ phương trình phi tuyến kỹ thuật mã ngu
 ## 1. Cài đặt và Khởi chạy
 
 ### Sử dụng Bản phát hành Đóng gói sẵn (Windows Standalone)
-1. Tải gói nén chính thức **[Ncal-windows.zip](https://github.com/nbchien/ncal/releases/download/v5.0-beta.3.1/Ncal-windows_v50_beta3.1.zip)** (~111MB). Phiên bản mới nhất là phiên bản v5.0.3 update 1.
+1. Tải gói nén chính thức **[Ncal-windows.zip](https://github.com/nbchien/ncal/releases/download/v5.0-beta.3.2/Ncal-windows.zip)** (~111MB). Phiên bản mới nhất là phiên bản v5.0.3 update 1.
 2. Giải nén và nhấp đúp vào **`Ncal.exe`** để khởi chạy ngay lập tức.
 3. **Giao diện & Taskbar Icon**: Ứng dụng đã được đăng ký mã định danh Windows `AppUserModelID` (`smartair.ncal.equation_solver.5.0.3`).
 4. Tải thư viện example để xem các ví dụ mẫu.
 
-#### Mã băm xác thực toàn vẹn (Checksums SHA-256):
+#### Mã băm xác thực (Checksums SHA-256):
 - **Tệp nén `Ncal-windows.zip`**:
-  `bd1bddac2c827ff59a673fde60a3cf71bb2b85ddbfe8d2d11c80d663e4d4b3b2`
-- **Tệp thực thi `Ncal.exe`**:
-  `fb83bf3fa559a0a231beb445dcbb9feafe0686e6700acc21a19f28a1c902c49d`
+  `25a29eb0b6be3a3771d5bad1b728150fadbc0f45b999653430bcc964ed008907`
+- **Tệp thực thi `Ncal-Setup.exe`**:
+  `2d09162106b0817b1972708381b5bee01c298449ad7bf511b3f681eef581a39a`
 
 ---
 
